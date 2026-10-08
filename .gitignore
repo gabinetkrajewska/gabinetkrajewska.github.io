@@ -1,0 +1,11 @@
+# Dokumenty źródłowe i pliki robocze NIE trafiają do publicznego repozytorium
+*.docx
+*.doc
+*.pdf
+*.xlsx
+*.csv
+.DS_Store
+
+# Katalog roboczy ze zrzutami ekranu i podglądem wydruku (można skasować)
+podglad/
+
