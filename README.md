@@ -1,8 +1,9 @@
 # Informacja o naruszeniu ochrony danych osobowych — strona dla pacjentów
 
-Statyczna strona internetowa Gabinetu stomatologicznego Mariola Krajewska z informacją dla
-pacjentów o naruszeniu ochrony danych osobowych, do którego doszło u dostawcy oprogramowania
-gabinetowego. Strona realizuje obowiązek zawiadomienia osób, których dane dotyczą (art. 34 RODO).
+Statyczna strona internetowa Indywidualnej Praktyki Stomatologicznej Mariola Krajewska
+z informacją dla pacjentów o naruszeniu ochrony danych osobowych, do którego doszło u dostawcy
+oprogramowania gabinetowego — firmy FELG Software sp. z o.o. (program FELG Dent). Strona realizuje
+obowiązek zawiadomienia osób, których dane dotyczą (art. 34 RODO).
 
 Adres strony: **https://gabinetkrajewska.github.io/**
 
@@ -35,40 +36,35 @@ Strona nie używa JavaScriptu, plików cookies, analityki, formularzy ani żadny
 serwerów. Jedyne odnośniki wychodzące prowadzą do `gov.pl` i `mobywatel.gov.pl` oraz do telefonu
 (`tel:`) i poczty (`mailto:`).
 
-## Do uzupełnienia przed publikacją
+## Dane kontaktowe na stronie
 
-W pliku `index.html`, w sekcji **Kontakt**, znajdują się dwa znaczniki do wypełnienia. Każdy
-występuje w jednym wierszu **dwa razy**: raz w adresie odnośnika, raz w widocznym tekście.
-
-```html
-<p>Telefon: <a href="tel:[TELEFON]">[TELEFON]</a> <span class="do-uzupelnienia">— do uzupełnienia</span><br>
-  E-mail: <a href="mailto:[E-MAIL]">[E-MAIL]</a> <span class="do-uzupelnienia">— do uzupełnienia</span><br>
-```
-
-Po uzupełnieniu powinno to wyglądać na przykład tak. Numer telefonu w odnośniku `tel:` zapisujemy
-bez spacji, z numerem kierunkowym kraju, a w widocznym tekście zamiast spacji wstawiamy `&nbsp;`,
-żeby numer nie łamał się na dwa wiersze. Całe fragmenty `<span>— do uzupełnienia</span>` usuwamy:
+W sekcji **Kontakt** podany jest wyłącznie telefon i adres gabinetu — gabinet nie podaje na tej
+stronie własnego adresu e-mail. Obok znajduje się adres e-mail dostawcy oprogramowania, przepisany
+z treści komunikatu.
 
 ```html
-<p>Telefon: <a href="tel:+48890000000">89&nbsp;000&nbsp;00&nbsp;00</a><br>
-  E-mail: <a href="mailto:gabinet@przyklad.pl">gabinet@przyklad.pl</a><br>
+<p>Telefon: <a href="tel:+48897550900">89&nbsp;755&nbsp;09&nbsp;00</a><br>
+  Adres: ul. Kolejowa 2 lok. 208, 11-440 Reszel</p>
 ```
 
-Znaczniki łatwo odnaleźć, szukając w pliku tekstu `uzupeł`. Nad każdym z nich jest komentarz
-`<!-- UZUPEŁNIĆ: ... -->`, który **po wypełnieniu należy usunąć**.
+Gdyby numer się zmienił, trzeba poprawić go **w dwóch miejscach w tym samym wierszu**: w adresie
+odnośnika (`tel:` — bez spacji, z numerem kierunkowym kraju `+48`) oraz w widocznym tekście
+(zamiast spacji wstawiamy `&nbsp;`, żeby numer nie łamał się na dwa wiersze). Numer trzeba wtedy
+zmienić także w treści SMS-a poniżej.
 
 ## Jak zaktualizować treść strony
 
 1. Otwórz `index.html` w zwykłym edytorze tekstu (nie w Wordzie) albo bezpośrednio na GitHubie
    (przycisk z ołówkiem nad plikiem).
 2. Zmień tylko tekst między znacznikami, np. między `<p>` a `</p>`. Nie zmieniaj samych znaczników.
-3. **Zawsze dopisz datę aktualizacji.** Na dole pliku, w stopce, jest wiersz:
+3. **Zawsze dopisz datę aktualizacji.** Na dole pliku, w stopce, są dwa wiersze:
 
    ```html
-   <p>Data publikacji: 8 października 2026. Ostatnia aktualizacja: 8 października 2026.</p>
+   <p>Data publikacji: 9 października 2026.</p>
+   <p>Ostatnia aktualizacja: 9 października 2026.</p>
    ```
 
-   Datę publikacji zostaw bez zmian, a datę po słowach „Ostatnia aktualizacja" zmień na dzisiejszą.
+   Datę publikacji zostaw bez zmian, a datę w drugim wierszu zmień na dzisiejszą.
    Dzięki temu pacjent widzi, że informacja jest aktualna.
 4. Zapisz zmiany (na GitHubie: „Commit changes"). Strona odświeża się zwykle w ciągu minuty.
    Jeżeli nie widać zmian, odśwież stronę w przeglądarce z wciśniętym klawiszem Shift.
@@ -96,18 +92,19 @@ wiadomość nie przypominała prób oszustwa i żeby pacjenci przyzwyczajali si�
 z SMS-ów. SMS nie zawiera polskich znaków (zmieściłby się wtedy tylko 70 znaków zamiast 160).
 
 ```
-Gabinet stomatologiczny Mariola Krajewska: wazna informacja. Wpisz w przegladarce: gabinetkrajewska.github.io Tel. 000 000 000. Nie prosimy o dane ani oplaty.
+Indywidualna Praktyka Stomatologiczna Mariola Krajewska: wazna informacja. Wpisz w przegladarce: gabinetkrajewska.github.io Tel. 897550900. Nie prosimy o dane.
 ```
 
-W miejsce `000 000 000` wpisujemy numer gabinetu. Na numer telefonu zostało **13 znaków** — mieści
-się np. `89 755 00 00`. Cała wiadomość musi mieć **najwyżej 160 znaków**, inaczej operator podzieli
-ją na dwie wiadomości.
+To **159 znaków**. Cała wiadomość musi mieć najwyżej **160 znaków**, inaczej operator podzieli ją
+na dwie wiadomości. Przy pełnej nazwie praktyki nie mieści się już numer telefonu zapisany ze
+spacjami — stąd `897550900` bez spacji (telefony i tak rozpoznają taki numer i pozwalają na niego
+zadzwonić jednym dotknięciem).
 
 ## Publikacja na GitHub Pages
 
-Repozytorium musi nazywać się dokładnie `gabinetkrajewska.github.io` i być publiczne. W ustawieniach
-repozytorium: **Settings → Pages → Source: Deploy from a branch → Branch: `main` / katalog `/ (root)`**,
-a następnie zaznaczamy **Enforce HTTPS**. Pierwsza publikacja trwa zwykle 1–2 minuty.
+Strona jest już opublikowana. Ustawienia (Settings → Pages): źródło **Deploy from a branch**,
+gałąź `main`, katalog `/ (root)`, włączone **Enforce HTTPS**. Każdy `git push` do gałęzi `main`
+aktualizuje stronę w ciągu około minuty.
 
 Jeśli adres repozytorium kiedykolwiek się zmieni, trzeba poprawić adres w trzech miejscach:
 w `index.html` (znacznik `og:url`), w tym pliku oraz w treści SMS-a.

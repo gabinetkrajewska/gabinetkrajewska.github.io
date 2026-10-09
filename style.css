@@ -1,4 +1,4 @@
-/* Gabinet stomatologiczny Mariola Krajewska — informacja o naruszeniu ochrony danych.
+/* Indywidualna Praktyka Stomatologiczna Mariola Krajewska — informacja o naruszeniu danych.
    Jeden arkusz stylów, bez zewnętrznych zasobów i bez fontów z internetu. */
 
 :root {
@@ -281,11 +281,6 @@ blockquote {
 
 /* ---------- kontakt ---------- */
 
-.do-uzupelnienia {
-  color: var(--tekst-drugi);
-  font-size: 0.9375rem;
-}
-
 .kontakt .uwaga {
   margin-top: 1.5rem;
   padding: 0.875rem 1rem;
@@ -300,12 +295,13 @@ blockquote {
   border-top: 1px solid var(--linia);
   background: var(--tlo-ramka);
   padding: 1.5rem 0;
-  font-size: 0.9375rem;
+  font-size: 0.8125rem;
+  line-height: 1.5;
   color: var(--tekst-drugi);
 }
 
 .stopka p {
-  margin: 0 0 0.5rem;
+  margin: 0 0 0.4rem;
 }
 
 .stopka p:last-child {
@@ -354,7 +350,7 @@ blockquote {
   }
 
   h1, h2, h3,
-  .nadawca, .data, .adres-www, .do-uzupelnienia, .stopka {
+  .nadawca, .data, .adres-www, .stopka {
     color: #000;
   }
 
